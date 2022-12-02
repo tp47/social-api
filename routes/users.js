@@ -1,8 +1,8 @@
 import Router from "express-promise-router";
-import user from "../controllers/user/user.js";
+import userController from "../controllers/user/user.rest.contoller.js";
 
 const router = Router();
 
-router.get("/:id", user.get);
+router.get("/:id", userController.getOne);
 
 export default router;
