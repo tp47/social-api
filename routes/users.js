@@ -1,7 +1,7 @@
-import Router from "express-promise-router";
+import express from 'express';
 import userController from "../controllers/user/user.rest.contoller.js";
 
-const router = Router();
+const router = express.Router();
 
 router.get("/:id", userController.getOne);
 

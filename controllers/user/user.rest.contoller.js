@@ -1,9 +1,9 @@
-import userModel from '../../models/user/index.js';
+import userModel from "../../models/user/user.model.js";
 
 const userController = {
   getOne: async (req, res) => {
-    const data = await userModel.getOne(req.params.id);
-    res.json(data)
+    const result = await userModel.getOne(req.params.id);
+    res.json(result);
   },
 };
 
