@@ -13,7 +13,7 @@ const userModel = {
   getByUsername: async (username) => {
     try {
       const user = await db.getList("users", { filter: { username } });
-      return user;
+      return user[0];
     } catch (error) {
       throw error;
     }
