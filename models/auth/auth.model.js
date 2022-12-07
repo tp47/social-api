@@ -32,12 +32,10 @@ const authModel = {
     try {
       const { username, password } = user;
       const userData = await userModel.getByUsername(username);
-      console.log(userData);
       if (!userData) {
         throw new AuthError(`User with username ${username} not found`, 404);
       }
 
-      console.log(password, userData.password)
       const isPasswordCorrect = await bcrypt.compare(
         password,
         userData.password
@@ -56,6 +54,8 @@ const authModel = {
       throw error;
     }
   },
+
+  logout: async (user) => {},
 };
 
 export default authModel;
